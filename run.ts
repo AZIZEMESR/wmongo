@@ -23,8 +23,26 @@ if (fs.existsSync(envPath)) {
 
 
 
-        let f = await db.collection("students")
-        let result = await f.find({}).toArray()
+        let f = await db.collection("test")
+        let result =await f.insertMany([{
+            fname:"ali",
+            lname:"akbari",
+            age:22,
+            balance:1500
+        },
+        {
+            fname:"hassan",
+            lname:"akbari",
+            age:22,
+            balance:1500
+        },
+        {
+            fname:"kamran",
+            lname:"akbari",
+            age:22,
+            balance:1500
+        }])
+
         console.log(result)
         // let collections = await db.collections();
         // console.log(collections.map(c=> c.collectionName))
